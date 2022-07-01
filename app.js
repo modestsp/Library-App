@@ -1,19 +1,22 @@
-const theHobbit = new Book('The Hobbit', 'J.R.R Tolkien', 295, false)
-const theLotr = new Book('LOTR', 'J.R.R Tolkien', 300, true)
+
 let i = 0;
 let myLibrary = [];
 
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read === true ? read = "already read" : read = "not read yet";
-    this.info = function () {
-        console.log(`${title} by ${author}, ${pages} pages, ${read}`)
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read === true ? read = "already read" : read = "not read yet";
+        this.info = function () {
+            console.log(`${title} by ${author}, ${pages} pages, ${read}`)
+        }
     }
 }
 
+const theHobbit = new Book('The Hobbit', 'J.R.R Tolkien', 295, false)
+const theLotr = new Book('LOTR', 'J.R.R Tolkien', 300, true)
 
 // This function add a book to the array 'myLibrary'
 function addBookToLibrary() {
