@@ -62,13 +62,19 @@ function displayNewBook() {
 
 const container = document.querySelector('.container')
 const newBook = document.querySelector('.newBook')
-
+const error = document.querySelector('.error')
 
 // When user clicks the button, add the new book.
-newBook.addEventListener("click", () => {
+newBook.addEventListener("click", (e) => {
+    e.preventDefault();
+    if(document.getElementById("title").value === "" || document.getElementById("author").value === "") {
+        return  error.textContent = "All fields must be fullfilled!";
+    } else {
     addBookToLibrary();
     displayNewBook();
     resetForm();
+    error.textContent = ""
+    }
 });
 
 

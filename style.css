@@ -20,9 +20,17 @@ h1 {
 }
 
 form {
+    display: flex;
+    flex-direction: column;
     margin: 1rem;
+    width: 35rem;
 }
 
+
+.error {
+    font-size: 1.5rem;
+    color: rgb(216, 12, 12);
+}
 .container {
     display: grid;
     padding: 1rem;
